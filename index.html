@@ -1,8 +1,102 @@
-<html>
-    <head>
-        <title>rellz.com</title>
-    </head>
-    <body>
-        <p>hey</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F3 Workout Randomizer</title>
+    <meta
+      name="description"
+      content="Generate a randomized F3-style bootcamp workout: warm-up, mosey, the thang, and Mary."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <div class="brand">
+          <span class="flag" aria-hidden="true"></span>
+          <span>F3 WORKOUT RANDOMIZER</span>
+        </div>
+        <h1>Roll a workout, not the dice on your excuses.</h1>
+        <p class="tag">
+          Free, peer-led, outdoors. Generate a randomized bootcamp beatdown —
+          warm-up, mosey, the thang, and Mary.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="card" id="controls">
+        <h2>Settings</h2>
+        <div class="field-grid">
+          <div class="field">
+            <label for="duration">Duration</label>
+            <select id="duration">
+              <option value="30">30 minutes</option>
+              <option value="45" selected>45 minutes</option>
+              <option value="60">60 minutes</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="focus">Focus</label>
+            <select id="focus">
+              <option value="full" selected>Full Body</option>
+              <option value="upper">Upper Body</option>
+              <option value="lower">Lower Body</option>
+              <option value="cardio">Cardio Blast</option>
+              <option value="core">Core Crusher</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ao-name">AO (optional)</label>
+            <input type="text" id="ao-name" placeholder="e.g. The Rustpile" />
+          </div>
+          <div class="field">
+            <label for="q-name">Q (optional)</label>
+            <input type="text" id="q-name" placeholder="e.g. Bradrel" />
+          </div>
+        </div>
+
+        <div class="toggle-row">
+          <label class="toggle">
+            <input type="checkbox" id="mosey" checked />
+            Include mosey
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="coupons" />
+            Include coupons (blocks/sandbags)
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="generate-btn">🎲 Generate Workout</button>
+          <button class="ghost" id="copy-btn" disabled>Copy Text</button>
+          <button class="ghost" id="share-btn" disabled>Copy Share Link</button>
+          <button class="ghost" id="print-btn" disabled>Print</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Beatdown</h2>
+        <div id="workout-output" class="empty">
+          Hit "Generate Workout" to build your beatdown.
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <div class="wrap">
+        <p>
+          Not affiliated with F3 Nation. Exercise descriptions drawn from the
+          common F3 lexicon &mdash; always warm up, hydrate, and modify as
+          needed. Learn more at
+          <a href="https://f3nation.com" target="_blank" rel="noopener">f3nation.com</a>.
+        </p>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+  </body>
 </html>
